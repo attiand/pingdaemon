@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+BASEDIR=$(dirname $0)
+
+groovy -cp $BASEDIR/../lib $BASEDIR/../lib/Main.groovy $*
