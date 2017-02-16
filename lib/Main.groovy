@@ -28,12 +28,16 @@ use (TimerMethods) {
         def proc = "ping -c 3 ${it}".execute()
         proc.waitFor()
         tmp[it] = proc.exitValue()
+        if(cfg.failed == it) {
+          tmp[it] = 1
+        }
         println "${it} " + (tmp[it] == 0 ? 'success' : 'failed')
       }
 
       tmp.each { k, v ->
         if(state[k] != null && state[k] != v){
-          mail.send('Ping state change', tmp)
+          //mail.send('Ping state change', tmp)
+          println "send mail to: " + cfg.mail.to
         }
       }
       state = tmp
