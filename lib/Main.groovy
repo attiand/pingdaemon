@@ -36,7 +36,7 @@ use (TimerMethods) {
 
       tmp.each { k, v ->
         if(state[k] != null && state[k] != v){
-          //mail.send('Ping state change', tmp)
+          mail.send('Ping state change', tmp)
           println "send mail to: " + cfg.mail.to
         }
       }
