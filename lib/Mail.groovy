@@ -17,6 +17,6 @@ class Mail {
               message: body,
               subject : subject,
               mailhost: 'localhost',
-              messagemimetype: 'text')
+              messagemimetype: 'text/html')
   }
 }
