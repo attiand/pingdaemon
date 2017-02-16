@@ -1,4 +1,4 @@
-# Ping
+# pingdaemon
 
 Pings multiple host and send email on failures
 
@@ -28,5 +28,13 @@ usage: ping.groovy [OPTIONS]
 ### Example
 
 ```
-bin/ping --config etc/config.json
+bin/pingdaemon --config etc/config.json
+```
+## Installation
+
+```
+sudo mkdir -p /usr/share && cd /usr/share
+sudo git clone https://github.com/eplatti/pingdaemon.git
+sudo cp pingdaemon/etc/pingdaemon.service /usr/lib/systemd/system
+systemctl enable pingdaemon
 ```

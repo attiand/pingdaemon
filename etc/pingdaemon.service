@@ -1,0 +1,14 @@
+[Unit]
+Description=Ping surveillance daemon
+Documentation=https://github.com/eplatti/pingdaemon
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+ExecStart=/usr/share/pingdaemon/bin/pingdaemon --config /usr/share/pingdaemon/etc/config.json
+KillMode=process
+Restart=on-failure
+RestartSec=20s
+
+[Install]
+WantedBy=multi-user.target
