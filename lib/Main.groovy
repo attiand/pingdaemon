@@ -21,7 +21,7 @@ def state = [:]
 
 use (TimerMethods) {
     def timer = new Timer()
-    def task = timer.runEvery(opt.d ? opt.d.toInteger() * 1_000 : 1_000, opt.p ? opt.p.toInteger() * 1_000 : 60_000) {
+    def task = timer.runEvery(opt.d ? opt.d.toInteger() * 1000 : 1000, opt.p ? opt.p.toInteger() * 1000 : 60000) {
       cfg = config.load()
       def tmp = [:]
       cfg.hosts.each {

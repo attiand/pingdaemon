@@ -38,3 +38,6 @@ sudo git clone https://github.com/eplatti/pingdaemon.git
 sudo cp pingdaemon/etc/pingdaemon.service /usr/lib/systemd/system
 systemctl enable pingdaemon
 ```
+### Prerequisite
+
+* Groovy
