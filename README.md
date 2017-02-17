@@ -34,7 +34,7 @@ bin/pingdaemon --config etc/config.json
 
 ```
 sudo mkdir -p /usr/share && cd /usr/share
-sudo git clone https://github.com/eplatti/pingdaemon.git
+sudo git clone https://github.com/attiand/pingdaemon.git
 sudo cp pingdaemon/etc/pingdaemon.service /usr/lib/systemd/system
 systemctl enable pingdaemon
 ```

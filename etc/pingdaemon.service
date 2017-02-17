@@ -1,6 +1,6 @@
 [Unit]
 Description=Ping surveillance daemon
-Documentation=https://github.com/eplatti/pingdaemon
+Documentation=https://github.com/attiand/pingdaemon
 Wants=network-online.target
 After=network-online.target
 
