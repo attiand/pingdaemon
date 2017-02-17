@@ -31,7 +31,9 @@ use (TimerMethods) {
         if(cfg.failed == it) {
           tmp[it] = 1
         }
-        println "${it} " + (tmp[it] == 0 ? 'success' : 'failed')
+
+        def host = new Host(address: it)
+        println "${it} (${host.name}) " + (tmp[it] == 0 ? 'success' : 'failed')
       }
 
       tmp.each { k, v ->

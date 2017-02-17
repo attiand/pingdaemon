@@ -13,7 +13,7 @@ Pings multiple host and send email on failures
   "hosts": [
     "85.30.23.232",
     "85.30.23.233",
-    "85.30.23.234.1"
+    "85.30.23.234"
   ]
 }
 ```

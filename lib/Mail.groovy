@@ -8,15 +8,17 @@ class Mail {
 
   void send(def subject, def iptable){
     def ant = new AntBuilder()
-    def body = "ip table\n"
-    iptable.each {
-      k, v -> body <<= "$k: " + (v == 0 ? 'success' : 'failed') + "\n"
+    def body = "nodes:\n------\n"
+    iptable.each { k, v ->
+      def host = new Host(address: k)
+      body <<= "$k (${host.name}): " + (v == 0 ? 'success' : 'failed') + "\n"
     }
+
     ant.mail (from: config.mail.from,
               tolist: config.mail.to,
               message: body,
               subject : subject,
               mailhost: 'localhost',
-              messagemimetype: 'text/html')
+              messagemimetype: 'text/plain')
   }
 }
