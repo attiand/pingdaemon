@@ -36,7 +36,7 @@ bin/pingdaemon --config etc/example/config.json
 sudo mkdir -p /usr/share && cd /usr/share
 sudo git clone https://github.com/attiand/pingdaemon.git
 sudo mkdir -p /etc/pingdaemon && sudo cp pingdaemon/etc/example/config.json /etc/pingdaemon/
-sudo cp pingdaemon/etc/pingdaemon.service /usr/lib/systemd/system
+sudo mkdir -p /usr/lib/systemd/system && sudo cp pingdaemon/etc/pingdaemon.service /usr/lib/systemd/system/pingdaemon.service
 systemctl enable pingdaemon
 ```
 ### Prerequisite
