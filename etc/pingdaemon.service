@@ -5,7 +5,7 @@ Wants=network-online.target
 After=network-online.target
 
 [Service]
-ExecStart=/usr/share/pingdaemon/bin/pingdaemon --config /usr/share/pingdaemon/etc/config.json
+ExecStart=/usr/share/pingdaemon/bin/pingdaemon --config /etc/pingdaemon/config.json
 KillMode=control-group
 Restart=on-failure
 RestartSec=20s

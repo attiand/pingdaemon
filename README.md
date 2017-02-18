@@ -28,13 +28,14 @@ usage: ping.groovy [OPTIONS]
 ### Example
 
 ```
-bin/pingdaemon --config etc/config.json
+bin/pingdaemon --config etc/example/config.json
 ```
 ## Installation
 
 ```
 sudo mkdir -p /usr/share && cd /usr/share
 sudo git clone https://github.com/attiand/pingdaemon.git
+sudo mkdir -p /etc/pingdaemon && cp pingdaemon/etc/example/config.json /etc/pingdaemon
 sudo cp pingdaemon/etc/pingdaemon.service /usr/lib/systemd/system
 systemctl enable pingdaemon
 ```
