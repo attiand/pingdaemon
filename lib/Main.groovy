@@ -14,14 +14,16 @@ if(opt.arguments().size() != 0 || opt.h) {
   return
 }
 
-def config = new Config(new File(opt.c ?: 'config.json'))
-def mail = new Mail(config: config.load())
+def config = new Config(new File(opt.c ?: 'config.cfg'))
+def cfg = config.load()
+def mail = new Mail(config: cfg)
 
 def state = [:]
 
 use (TimerMethods) {
     def timer = new Timer()
-    def task = timer.runEvery(opt.d ? opt.d.toInteger() * 1000 : 1000, opt.p ? opt.p.toInteger() * 1000 : 60000) {
+
+    def task = timer.runEvery(opt.d ? opt.d.toInteger() : cfg.startupDelay, opt.p ? opt.p.toInteger() : cfg.pollingPeriod) {
       cfg = config.load()
       def tmp = [:]
       cfg.hosts.each {

@@ -1,7 +1,13 @@
-import groovy.json.JsonSlurper
+import groovy.util.ConfigSlurper
 
 class Config {
+  private ConfigSlurper slurper = new ConfigSlurper()
   private File file
+
+  def defaults = '''
+  startupDelay = 1
+  pollingPeriod = 60
+  '''
 
   Config(File file) {
     this.file = file
@@ -13,8 +19,7 @@ class Config {
   }
 
   private load() {
-    file.withReader { r ->
-      new JsonSlurper().parse( r )
-    }
+    def d = slurper.parse(defaults)
+    d.merge(slurper.parse(file.toURI().toURL()))
   }
 }
