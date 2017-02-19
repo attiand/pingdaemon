@@ -1,8 +1,8 @@
-# pingdaemon
+# Pingdaemon
 
-Pings multiple host and send email on failures
+Pings multiple host and send email on status change.
 
-## Configuration file syntax (Groovy syntax)
+## Configuration file syntax (Groovy)
 
 ```groovy
 mail {
@@ -33,7 +33,7 @@ bin/pingdaemon --config etc/example.cfg
 ```
 sudo mkdir -p /usr/share && cd /usr/share
 sudo git clone https://github.com/attiand/pingdaemon.git
-sudo mkdir -p /etc/pingdaemon && sudo cp pingdaemon/etc/example.cfg /etc/pingdaemon/
+sudo mkdir -p /etc/pingdaemon && sudo cp pingdaemon/etc/example.cfg /etc/pingdaemon/pingdaemon.cfg
 sudo mkdir -p /usr/lib/systemd/system && sudo cp pingdaemon/etc/pingdaemon.service /usr/lib/systemd/system/pingdaemon.service
 systemctl enable pingdaemon
 ```
