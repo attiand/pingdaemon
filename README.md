@@ -1,6 +1,6 @@
 # Pingdaemon
 
-Pings multiple host and send email on status change.
+Pings multiple hosts and sends email on status change.
 
 ## Configuration file syntax (Groovy)
 
@@ -20,10 +20,15 @@ hosts = [
 ```groovy
   to = ['m1@gmail.com', 'm2@gmail.com']
 ```
+### Change the polling period
+Default is 60 seconds.
+```groovy
+  pollingPeriod = 60
+```
 ## Usage
 ```
 usage: ping.groovy [OPTIONS]
- -c,--config <arg>   config file
+ -c,--config <arg>   config file (default is config.cfg)
  -d,--delay <arg>    startup sleep time in sec
  -h,--help           usage information
  -p,--period <arg>   period to sleep between checks in sec
