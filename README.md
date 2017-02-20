@@ -15,6 +15,11 @@ hosts = [
   '85.30.23.234'
 ]
 ```
+
+### Multiple mail recipients
+```groovy
+  to = ['m1@gmail.com', 'm2@gmail.com']
+```
 ## Usage
 ```
 usage: ping.groovy [OPTIONS]
@@ -39,4 +44,4 @@ systemctl enable pingdaemon
 ```
 ### Prerequisites
 
-* Groovy
+* Groovy 2

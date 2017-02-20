@@ -15,7 +15,7 @@ class Mail {
     }
 
     ant.mail (from: config.mail.from,
-              tolist: config.mail.to,
+              tolist: to instanceof List ? to : [to],
               message: body,
               subject : subject,
               mailhost: 'localhost',
